@@ -1,10 +1,10 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 // Credenciales WiFi
-const char* ssid = "CLARO_RODAS";
-const char* password = "ROMACA27283022190530";
+const char* ssid = "Wifi";
+const char* password = "Contraseña Wifi";
 //Configuracion de MQTT Broker
-const char* mqttServer = "192.168.100.176 ";  //Dirección IP del Broker
+const char* mqttServer = "IP Raspberry";  //Dirección IP del Broker
 const int mqttPort = 1883;
 const char* mqttUser = "pi";           //username de usuario creado
 const char* mqttPassword = "pi";   //password de usuario creado
