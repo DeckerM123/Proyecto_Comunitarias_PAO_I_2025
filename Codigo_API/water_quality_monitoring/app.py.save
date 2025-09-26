@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+
+from flask import Flask
+from flask_cors import CORS 
+from flask_smorest import Api
+from resources.sensor_resource import blp as SensorsBlp
+from resources.measurement_resource import blp as MeasurementsBlp
+from resources.report_resource import blp as ReportsBlp
+
+def create_app():
+
+    app = Flask(__name__)
+    # Habilitar CORS para que el frontend pueda acceder desde cualquier origen
+    api = Api(app)
+    CORS(app)  # Ajusta esto segun tus necesidades
+
+
+
+    # Registro de los blueprints
+
+    CORS(SensorsBlp)
+    CORS(MeasurementsBlp)
+    CORS(ReportsBlp)
+
+    api.register_blueprint(SensorsBlp)
+    api.register_blueprint(MeasurementsBlp)
+    api.register_blueprint(ReportsBlp)
+
+
+
+    @app.route("/")
+
+    def index():
+
+     return send_from_directory("static", "index.html")  # Sirve el frontend	
+    
+    return app

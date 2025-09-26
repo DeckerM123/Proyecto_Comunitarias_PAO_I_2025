@@ -1,0 +1,9 @@
+flask
+flask-smorest
+sqlalchemy
+flask-sqlalchemy
+marshmallow
+gunicorn
+reportlab
+matplotlib
+flask-cors
